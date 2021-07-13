@@ -3,27 +3,12 @@
  * @Author: LS
  * @Date: 2021-07-12 10:56:47
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-07-12 16:39:28
+ * @LastEditTime: 2021-07-13 11:38:54
 -->
 <template>
   <div>
 <!-- 头部 -->
-<div class="header">
-  <div class="wrapper">
-    <div class="logo">
-      <img src="/images/logo.jpg" alt="">
-    </div>
-    <div class="title">行学天下</div>
-    <ul class="category" v-for="item in categories" :key="item.id">
-      <li>{{item.name}}</li>
-    </ul>
-   <div class="contact">
-      <i>phone</i>
-      <a href="">联系我们</a>
-    </div>
-  </div>
-</div>
-
+<Head></Head>
 <!-- /头部 -->
 
 <!-- 轮播 -->
@@ -63,32 +48,27 @@
 
 <script>
 import {get} from '../utils/request'
+import Head from './components/Head' 
 export default {
+  components:{Head}, // 注册局部组件
   data(){
     return {
       carousels:[],
-      categories:[],
+      
       projects:[]
     }
   },
   // 生命周期钩子- vue实例刚刚创建完成，页面还没完全渲染出来的时候
   created(){
-    this.loadCarousels();
-    this.loadCategories();
+    this.loadCarousels(); 
     this.loadProjects();
   },
   methods:{
+    // 项目
     loadProjects(){
       let url="/index/project/pageQuery?page=1&pageSize=5"
       get(url).then(resp=>{
         this.projects=resp.data.list;
-      })
-
-    },
-    loadCategories(){
-      let url = "/index/category/findAll"
-      get(url).then(resp => {
-        this.categories=resp.data;
       })
     },
     // 加载轮播图数据
@@ -107,13 +87,16 @@ export default {
   padding: .5em 0;
 }
 .projects .project {
-  padding: .5em 0;
+  padding: 1em;
   border-bottom: 1px solid #ededed;
+  background-color: rgb(248, 247, 247);
+  border-radius: 5px;
 }
 .projects .project > .picture{ 
   float: left;
-  width: 400px;
-  height: 300px;
+  width: 380px;
+  height: 280px;
+  line-height: 280px;
   background-color: #ededed;
 }
 .projects .project > .picture img{
@@ -122,52 +105,19 @@ export default {
 .projects .project > .info{ 
   margin-left: 420px;
   height: 300px;
+  padding: 0.2rem 0;
+}
+.project .info .title {
+font-size: 20px;
+padding: .7em 0;
 }
 
 /* 产品 */
 
 /* 头部 */
-.header {
-  padding: .5em 0;
-}
 .wrapper {
   width: 90%;
   margin: 0 auto;
 }
-.header .wrapper::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.header .wrapper > * {
-  float: left;
-  height: 60px;
-  line-height: 60px;
-}
-.header .logo {
-  width: 60px;
-  overflow: hidden;
-}
-.header .logo img{
-  width: 100%;
-}
-.header .title {
-  font-weight: bold;
-  font-size: 20px;
-  padding: 0 1em;
-}
-.header ul.category::after{
-  content: "";
-  display: block;
-  clear: both;
-}
-.header ul.category > li{
-  float: left;
-  width: 80px;
-  text-align: center;
-}
 
-.header .contact {
-  float: right;
-}
 </style>
