@@ -3,7 +3,7 @@
  * @Author: LS
  * @Date: 2021-07-12 10:56:47
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-07-13 11:38:54
+ * @LastEditTime: 2021-07-13 23:36:29
 -->
 <template>
   <div>
@@ -54,7 +54,6 @@ export default {
   data(){
     return {
       carousels:[],
-      
       projects:[]
     }
   },

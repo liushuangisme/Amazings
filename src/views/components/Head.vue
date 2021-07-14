@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-13 09:20:39
- * @LastEditTime: 2021-07-13 12:49:44
+ * @LastEditTime: 2021-07-14 16:38:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /xxtx-ui/src/views/Head.vue
@@ -14,11 +14,12 @@
     </div>
     <div class="title" @click="toIndex">{{name}}</div>
     <ul class="category">
-      <li v-for="item in categories" @click="toList(item.id)" :key="item.id">{{item.name}}</li>
+      <li v-for="item in categories" @click="toList(item.id,item.name)" :key="item.id">{{item.name}}</li>
     </ul>
+    <div class="wtm" @click="toWTM">WTM专场</div>
    <div class="contact">
-      <i>phone</i>
-      <a href="">联系我们</a>
+      <i v-html="phone"></i>
+      <a href="#">联系我们</a>
     </div>
   </div>
 </div>
@@ -31,7 +32,8 @@ export default {
     return{
       categories:[],
       name:'行学天下',
-      logo:''
+      logo:'',
+      phone:'phone',
     }
   },
   methods:{
@@ -39,12 +41,25 @@ export default {
     toIndex(){
       this.$router.push({path:"/"})
     },
+    // wtm专场
+    toWTM(){
+      this.$router.push({path:"/wtm"})
+    },
     // 跳转到列表页面
-    toList(categoryId){
+    toList(categoryId,name){
       this.$router.push({
         path:'/list',
-        query:{categoryId}
+        query:{categoryId,name}
       })
+    },
+     // 加载phone的icon
+    loadPhone(){
+        let url = "/index/findByKey"
+        get(url,{name:'phone'}).then(resp => {
+          if(resp.data){
+            this.phone=resp.data.val; 
+          }
+        })
     },
     // 加载网站logo
     loadWebLogo(){
@@ -75,13 +90,15 @@ export default {
   created(){
     this.loadCategories();
     this.loadWebName();
-    this.loadWebLogo()
+    this.loadWebLogo();
+    this.loadPhone()
   }
 }
 </script>
 <style scoped>
 .header {
   padding: .5em 0;
+  box-shadow: 1px 2px 5px #ccc;
 }
 .wrapper {
   width: 90%;
@@ -125,4 +142,9 @@ export default {
 .header .contact {
   float: right;
 }
+/* wtm */
+.wtm{
+  cursor: pointer;
+}
+/* /wtm */
 </style>
