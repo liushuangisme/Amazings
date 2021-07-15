@@ -2,8 +2,8 @@
  * @Description: 
  * @Author: charles
  * @Date: 2021-07-02 10:23:00
- * @LastEditors: charles
- * @LastEditTime: 2021-07-02 10:24:23
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-14 18:47:49
 -->
 <template>
   <div class="footer">
@@ -14,6 +14,7 @@
 
 <style lang="scss" scoped>
   .footer {
+    height: 200px;
     border-top: 1px solid #ccc;
     padding:1em 0;
     text-align: center;

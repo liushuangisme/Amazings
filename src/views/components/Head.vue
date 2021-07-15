@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-13 09:20:39
- * @LastEditTime: 2021-07-14 16:38:02
+ * @LastEditTime: 2021-07-14 16:47:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /xxtx-ui/src/views/Head.vue
@@ -145,6 +145,7 @@ export default {
 /* wtm */
 .wtm{
   cursor: pointer;
+  padding-left: 15px;
 }
 /* /wtm */
 </style>

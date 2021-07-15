@@ -3,7 +3,7 @@
  * @Author: charles
  * @Date: 2021-07-12 10:56:47
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-07-13 19:41:09
+ * @LastEditTime: 2021-07-14 18:36:15
 -->
 <template>
   <div>
@@ -57,7 +57,7 @@ export default {
       articleData:{},
       param:{
         page:1,
-        pageSize:2
+        pageSize:8
       },
       name:''
     }
