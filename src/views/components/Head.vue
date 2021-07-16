@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-13 09:20:39
- * @LastEditTime: 2021-07-14 16:47:06
+ * @LastEditTime: 2021-07-15 16:24:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /xxtx-ui/src/views/Head.vue
@@ -17,6 +17,7 @@
       <li v-for="item in categories" @click="toList(item.id,item.name)" :key="item.id">{{item.name}}</li>
     </ul>
     <div class="wtm" @click="toWTM">WTM专场</div>
+    <div class="wtm" @click="toVideo">Video</div>
    <div class="contact">
       <i v-html="phone"></i>
       <a href="#">联系我们</a>
@@ -40,6 +41,10 @@ export default {
     // 回首页
     toIndex(){
       this.$router.push({path:"/"})
+    },
+    // video页面
+    toVideo(){
+      this.$router.push({path:"/video"})
     },
     // wtm专场
     toWTM(){

@@ -1,7 +1,7 @@
 <!--
  * @Author: your ls
  * @Date: 2021-07-13 20:28:41
- * @LastEditTime: 2021-07-14 20:30:28
+ * @LastEditTime: 2021-07-15 23:46:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /xxtx-ui/src/views/WTM.vue
@@ -12,8 +12,8 @@
     <!-- 头部 -->
        <Head></Head>
     <!-- /头部 -->
-        <!-- 轮播 -->
-        <div class="wtm_banner">
+    <!-- lunbo -->
+    <div class="wtm_banner">
             <div class="wtm_carousels" style="width:100%">
                 <el-carousel :interval="4000" type="card" height="200px">
                   <el-carousel-item v-for="item in carousels" :key="item.id">
@@ -23,7 +23,12 @@
                 </el-carousel>
             </div>
         </div>
-        <!-- /轮播 -->
+    <!-- /lunbo -->
+        <!-- 头部 -->
+        <div class="header">
+           <div class="header_section"></div>
+        </div>
+        <!-- /头部-->
         <!-- title background -->
         <div class="wtm_back">
         <div class="wtm_back_img">
@@ -59,7 +64,10 @@
                     <p>江湖传言，很多 IT 公司为了提升性别比例，对女性开发者的招聘做了一些倾斜，可是事实上，女性的开发者的比例依旧不高。
                     在调查中，发现男女比例竟然悬殊到 9:1。</p>小伙伴们，请珍惜你身边的女性开发者，她们非常的珍贵。</el-tab-pane>
                 <el-tab-pane label="选择WTM"><p>联结</p>为科技女性搭建交流互动的平台，碰撞迸发更多灵感火花。<p>赋能</p>理论与实践的全方位赋能，助力女性开发者快速提升，解锁新技能。<p>成长</p>通过激励与创新扶持，帮助女性开发者获得更多发展空间，实现价值。</el-tab-pane>
-                <el-tab-pane label="I am excellent today">I am a female developer and I am very good. I believe in myself and don't set limits on myself.</el-tab-pane>
+                <el-tab-pane label="I am excellent today">
+                    <p>I am a female developer and I am very good. </p>
+                    <p>I believe in myself and don't set limits on myself.</p>
+                </el-tab-pane>
             </el-tabs>
         </div>
         <!-- /时间轴 -->
@@ -115,6 +123,13 @@ export default {
 }
 </script>
 <style scoped>
+/* header */
+.header_section{
+    height: 100px;
+    width: 100%;
+    border-radius: 0 0 70px 70px;
+}
+/* /header */
 /*时间轴  */
 .timeLine{
     width:75%;
@@ -132,7 +147,6 @@ export default {
 .wtm_back .wtm_back_img{
     width: 100%;
     height: 100%;
-    /* background: url(http://8.144.165.190/test/img/1_02.jpg) no-repeat; */
     text-align: center;
 }
 
@@ -142,7 +156,7 @@ export default {
     font-weight: 500;
     padding: .5em;
     color:#fff;
-    background-color: sandybrown;
+    background-color:#4B0C77;
 }
 .wtm_back .wtm_back_img p:hover{
     color: #b4a078;

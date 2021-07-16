@@ -3,7 +3,7 @@
  * @Author: charles
  * @Date: 2021-07-01 11:24:08
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-07-13 20:32:50
+ * @LastEditTime: 2021-07-15 16:21:11
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -86,6 +86,15 @@ const routes = [{
         },
         component: () =>
             import ('../views/WTM.vue')
+    },
+    {
+        path: '/video',
+        name: 'Video',
+        meta: {
+            scrollToTop: true
+        },
+        component: () =>
+            import ('../views/Video.vue')
     }
 ]
 
