@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: charles
  * @Date: 2021-07-12 10:56:47
  * @LastEditors: Please set LastEditors
@@ -11,7 +11,7 @@
     <Head></Head>
     <!-- /头部 -->
 <div class="wrapper">
-    <!-- 列表 --> 
+    <!-- 列表 -->
       <div class="articles">
         <div class="title">{{name}}</div>
         <ul>
@@ -33,7 +33,7 @@
         :total="articleData.total">
        </el-pagination>
      </div>
-     
+
     <!-- /分页 -->
 </div>
 </div>
@@ -100,6 +100,9 @@ export default {
 .wrapper{
   width: 60%;
   margin: 0 auto;
+}
+.articles{
+ cursor: pointer;
 }
 .articles .title{
   font-size: 18px;

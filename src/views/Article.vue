@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: ls
  * @Date: 2021-07-01 11:24:08
  * @LastEditors: Please set LastEditors
@@ -16,7 +16,7 @@
       <div class="title_detail">
         <span>时间：{{articleContent.publishTime|fmtDate}}</span>
         <span>分类：{{articleContent.category?articleContent.category.name:''}}</span>
-        <span>作者：{{articleContent.baseUser?articleContent.baseUser.realname:''}}</span>
+        <span>作品整理人：{{articleContent.baseUser?articleContent.baseUser.realname:''}}</span>
       </div>
       <div class="body" v-html="articleContent.content"></div>
     </div>

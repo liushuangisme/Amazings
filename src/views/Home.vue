@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LS
  * @Date: 2021-07-12 10:56:47
  * @LastEditors: Please set LastEditors
@@ -12,10 +12,10 @@
 <!-- /头部 -->
 
 <!-- 轮播 -->
-    <div class="carousel">
-      <el-carousel :interval="5000" arrow="always">
-        <el-carousel-item v-for="item in carousels" :key="item.id">
-          <img :src="item.url" alt="" style="width:100%;">
+    <div class="carousel" style="width:100%;height:500px;">
+      <el-carousel :interval="5000" arrow="always" style="width:100%;height:500px;">
+        <el-carousel-item v-for="item in carousels" :key="item.id" style="width:100%;height:500px;">
+          <img :src="item.url" alt="" style="width:100%">
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -26,12 +26,12 @@
         <!-- 项目 -->
         <div class="project" v-for="i in projects" :key="i.id">
           <div class="picture">
-            <img :src="i.figure" alt="" style="width:100%;">
+            <img :src="i.cover" alt="" style="width:100%;">
           </div>
           <div class="info">
-            <div class="title">{{i.name}}</div>
-            <div class="time">{{i.beginTime|fmtDate}} ~ {{i.endTime|fmtDate}}</div>
-            <div class="introduce">{{i.introduce}}</div>
+            <div class="title">{{i.title}}</div>
+            <div class="time">{{i.publishTime|fmtDate}}</div>
+            <div class="introduce">来源于：{{i.category.name}}</div>
           </div>
         </div>
         <!-- /项目 -->
@@ -48,24 +48,46 @@
 
 <script>
 import {get} from '../utils/request'
-import Head from './components/Head' 
+import Head from './components/Head'
 export default {
   components:{Head}, // 注册局部组件
   data(){
     return {
-      carousels:[],
+      carousels:[
+        {
+      "id": 2,
+      "name": "one",
+      "introduce": "这是第一张",
+      "url": "http://8.144.165.190/test/img/swipe/lunbo-1.jpg",
+      "status": "正常"
+    },
+    {
+      "id": 3,
+      "name": "two",
+      "introduce": "这是第二张",
+      "url": "http://8.144.165.190/test/img/swipe/lunbo-2.jpg",
+      "status": "正常"
+    },
+    {
+      "id": 4,
+      "name": "three",
+      "introduce": "这是第三张",
+      "url": "http://8.144.165.190/test/img/swipe/lunbo-3.jpeg",
+      "status": "正常"
+    }
+      ],
       projects:[]
     }
   },
   // 生命周期钩子- vue实例刚刚创建完成，页面还没完全渲染出来的时候
   created(){
-    this.loadCarousels(); 
+    // this.loadCarousels();
     this.loadProjects();
   },
   methods:{
     // 项目
     loadProjects(){
-      let url="/index/project/pageQuery?page=1&pageSize=5"
+      let url="/index/article/pageQuery?page=1&pageSize=5"
       get(url).then(resp=>{
         this.projects=resp.data.list;
       })
@@ -81,6 +103,19 @@ export default {
 }
 </script>
 <style scoped>
+/* 轮播 */
+.el-carousel__container{
+  position:relative;
+  height:1080px;
+}
+.el-carousel__item{
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 1080px;
+    margin: 0;
+  }
+/* /轮播 */
 /* 产品 */
 .projects {
   padding: .5em 0;
@@ -91,7 +126,7 @@ export default {
   background-color: rgb(248, 247, 247);
   border-radius: 5px;
 }
-.projects .project > .picture{ 
+.projects .project > .picture{
   float: left;
   width: 380px;
   height: 280px;
@@ -99,9 +134,9 @@ export default {
   background-color: #ededed;
 }
 .projects .project > .picture img{
-  width: 100%; 
+  width: 100%;
 }
-.projects .project > .info{ 
+.projects .project > .info{
   margin-left: 420px;
   height: 300px;
   padding: 0.2rem 0;

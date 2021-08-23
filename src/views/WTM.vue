@@ -46,7 +46,7 @@
                 <div class="wtm_title">
                     <div class="wtm_tit">{{wtmDetail?item.title:''}}</div>
                     <p>
-                        <span>作者:{{item.baseUser.realname}}</span>
+                        <span>作品整理人:{{item.baseUser.realname}}</span>
                         <span>时间:{{item.publishTime|fmtDate}}</span>
                     </p>
                 </div>
@@ -71,7 +71,7 @@
             </el-tabs>
         </div>
         <!-- /时间轴 -->
-        
+
 
         <!-- 尾部 -->
 
@@ -94,7 +94,7 @@ export default {
     },
     created(){
       this.loadWtm(),
-      this.loadCarousels(); 
+      this.loadCarousels();
     },
     methods:{
         // 文章详情
@@ -119,7 +119,7 @@ export default {
             this.carousels = resp.data;
         })
         }
-    } 
+    }
 }
 </script>
 <style scoped>

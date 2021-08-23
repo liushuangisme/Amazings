@@ -17,7 +17,7 @@
       <li v-for="item in categories" @click="toList(item.id,item.name)" :key="item.id">{{item.name}}</li>
     </ul>
     <div class="wtm" @click="toWTM">WTM专场</div>
-    <div class="wtm" @click="toVideo">Video</div>
+    <!-- <div class="wtm" @click="toVideo">Video</div> -->
    <div class="contact">
       <i v-html="phone"></i>
       <a href="#">联系我们</a>
@@ -62,7 +62,7 @@ export default {
         let url = "/index/findByKey"
         get(url,{name:'phone'}).then(resp => {
           if(resp.data){
-            this.phone=resp.data.val; 
+            this.phone=resp.data.val;
           }
         })
     },
@@ -90,7 +90,7 @@ export default {
         get(url).then(resp => {
           this.categories=resp.data;
         })
-      }, 
+      },
   },
   created(){
     this.loadCategories();
