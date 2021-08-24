@@ -24,9 +24,12 @@
     <div class="projects">
       <div class="wrapper">
         <!-- 项目 -->
-        <div class="project" v-for="i in projects" :key="i.id">
+        <div class="project" v-for="i in projects" @click="toArticles(i.id)" :key="i.id">
           <div class="picture">
-            <img :src="i.cover" alt="" style="width:100%;">
+            <el-image
+            style="width: 380px; height: 280px"
+            :src="i.cover"
+            fit="cover"></el-image>
           </div>
           <div class="info">
             <div class="title">{{i.title}}</div>
@@ -42,6 +45,7 @@
     <!-- ... -->
 
     <!-- 底部 -->
+    <Footer></Footer>
     <!-- /底部 -->
   </div>
 </template>
@@ -49,8 +53,12 @@
 <script>
 import {get} from '../utils/request'
 import Head from './components/Head'
+import Footer from './components/Footer'
 export default {
-  components:{Head}, // 注册局部组件
+  components:{
+    Head,
+    Footer
+    }, // 注册局部组件
   data(){
     return {
       carousels:[
@@ -85,6 +93,14 @@ export default {
     this.loadProjects();
   },
   methods:{
+    // 文章详情
+    // 跳转到列表页面
+    toArticles(id){
+      this.$router.push({
+        path:'/article',
+        query:{id}
+      })
+    },
     // 项目
     loadProjects(){
       let url="/index/article/pageQuery?page=1&pageSize=5"
@@ -119,11 +135,11 @@ export default {
 /* 产品 */
 .projects {
   padding: .5em 0;
+  cursor: pointer;
 }
 .projects .project {
   padding: 1em;
   border-bottom: 1px solid #ededed;
-  background-color: rgb(248, 247, 247);
   border-radius: 5px;
 }
 .projects .project > .picture{

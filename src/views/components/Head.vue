@@ -18,9 +18,9 @@
     </ul>
     <div class="wtm" @click="toWTM">WTM专场</div>
     <!-- <div class="wtm" @click="toVideo">Video</div> -->
-   <div class="contact">
+   <div class="contact" @click="toVideo">
       <i v-html="phone"></i>
-      <a href="#">联系我们</a>
+      <a href="#">关于我们</a>
     </div>
   </div>
 </div>
@@ -38,6 +38,10 @@ export default {
     }
   },
   methods:{
+    // wtm_video专场
+    toVideo(){
+      this.$router.push({path:"/video"})
+    },
     // 回首页
     toIndex(){
       this.$router.push({path:"/"})
@@ -104,6 +108,9 @@ export default {
 .header {
   padding: .5em 0;
   box-shadow: 1px 2px 5px #ccc;
+  /* background: #4b0c77; */
+  /* opacity: 0.8; */
+  /* color:#ccc; */
 }
 .wrapper {
   width: 90%;

@@ -12,65 +12,77 @@
     <!-- 头部 -->
        <Head></Head>
     <!-- /头部 -->
-    <!-- lunbo -->
-    <div class="wtm_banner">
-            <div class="wtm_carousels" style="width:100%">
-                <el-carousel :interval="4000" type="card" height="200px">
-                  <el-carousel-item v-for="item in carousels" :key="item.id">
-                  <!-- <h3 class="medium">{{ item }}</h3> -->
-                  <img :src="item.url" alt="" style="width:100%">
-                  </el-carousel-item>
-                </el-carousel>
-            </div>
-        </div>
-    <!-- /lunbo -->
-        <!-- 头部 -->
+       <!-- 头部 -->
         <div class="header">
-           <div class="header_section"></div>
+           <div class="header_section">
+               <h1>欢迎来到WTM工坊</h1>
+               <p>让我们一起分享文章与见闻</p>
+           </div>
         </div>
         <!-- /头部-->
-        <!-- title background -->
-        <div class="wtm_back">
-        <div class="wtm_back_img">
-            <h1>WTM工坊</h1>
-            <p>传播女性的成长，为更多女性注入力量，加入WTM，成为我们的一员，让我们共同乘风破浪！</p>
-        </div>
-        </div>
-        <!-- /title background -->
-        <!-- body -->
-        <div class="wtm_con">
-            <div class="wtm_con_detail" v-for="item in wtmDetail" @click="toArticles(item.id)" :key="item.id">
-                <div class="wtm_img">
-                    <img :src="item.cover" alt="">
+
+        <!-- bodyWTM工坊内容 -->
+        <div class="wtm_container">
+        <!-- title WTM标题 -->
+            <div class="wtm_back">
+                <div class="wtm_back_img">
+                    <h1>WTM工坊</h1>
+                    <p>传播女性的成长，为更多女性注入力量，加入WTM，成为我们的一员，让我们共同乘风破浪！</p>
                 </div>
-                <div class="wtm_title">
-                    <div class="wtm_tit">{{wtmDetail?item.title:''}}</div>
-                    <p>
-                        <span>作品整理人:{{item.baseUser.realname}}</span>
-                        <span>时间:{{item.publishTime|fmtDate}}</span>
-                    </p>
+            </div>
+            <!-- /title-->
+            <div class="wtm_con">
+
+                <div class="wtm_con_detail" v-for="item in wtmDetail" @click="toArticles(item.id)" :key="item.id">
+                    <div class="wtm_img">
+                        <img :src="item.cover" alt="">
+                    </div>
+                    <div class="wtm_title">
+                        <div class="wtm_tit">{{wtmDetail?item.title:''}}</div>
+                        <p>
+                            <span>作品整理人:{{item.baseUser.realname}}</span>
+                            <span>时间:{{item.publishTime|fmtDate}}</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- /body -->
-<!-- 时间轴 -->
-        <div class="timeLine">
-            <!-- 时间轴标题 -->
-            <el-tabs :tab-position="tabPosition" style="height: 200px;width:90%">
-                <el-tab-pane label="WTM宗旨">
-                    <p>面向女性开发者设立的全球项目，旨在为女性开发者赋能。</p>
-                    <p>通过全方位资源支持，帮助女性开发者在职业和技术发展上获得更大提升空间，并为其打造学习、交流和展示自我的平台。</p></el-tab-pane>
-                <el-tab-pane label="女性发展现状">
-                    <p>江湖传言，很多 IT 公司为了提升性别比例，对女性开发者的招聘做了一些倾斜，可是事实上，女性的开发者的比例依旧不高。
-                    在调查中，发现男女比例竟然悬殊到 9:1。</p>小伙伴们，请珍惜你身边的女性开发者，她们非常的珍贵。</el-tab-pane>
-                <el-tab-pane label="选择WTM"><p>联结</p>为科技女性搭建交流互动的平台，碰撞迸发更多灵感火花。<p>赋能</p>理论与实践的全方位赋能，助力女性开发者快速提升，解锁新技能。<p>成长</p>通过激励与创新扶持，帮助女性开发者获得更多发展空间，实现价值。</el-tab-pane>
-                <el-tab-pane label="I am excellent today">
-                    <p>I am a female developer and I am very good. </p>
-                    <p>I believe in myself and don't set limits on myself.</p>
-                </el-tab-pane>
-            </el-tabs>
+        <!-- /bodyWTM工坊内容  -->
+        <!-- 时间轴 -->
+        <div class="wtm_time">
+        <!-- 时间轴标题 -->
+            <div class="wtm_back">
+                <div class="wtm_back_img">
+                    <h1 class="wtm_View" @click="toWTM_View()">点击查看WTM</h1>
+                    <p>传播女性的成长，为更多女性注入力量，加入WTM，成为我们的一员，让我们共同乘风破浪！</p>
+                </div>
+            </div>
+            <!-- /时间轴标题 -->
+
+            <div class="timeLine">
+                <!-- 时间轴-->
+                <el-tabs :tab-position="tabPosition" style="height: 200px;width:90%">
+                    <el-tab-pane label="WTM宗旨">
+                        <h3>&nbsp;&nbsp;面向女性开发者设立的全球项目，旨在为女性开发者赋能。</h3>
+                        <p>&nbsp;&nbsp;通过全方位资源支持，帮助女性开发者在职业和技术发展上获得更大提升空间，并为其打造学习、交流和展示自我的平台。</p></el-tab-pane>
+                    <el-tab-pane label="女性发展现状">
+                        <p>&nbsp;&nbsp;江湖传言，很多 IT 公司为了提升性别比例，对女性开发者的招聘做了一些倾斜，可是事实上，女性的开发者的比例依旧不高。
+                        在调查中，发现男女比例竟然悬殊到 9:1。</p>
+                        <h5>&nbsp;&nbsp;小伙伴们，请珍惜你身边的女性开发者，她们非常的珍贵。</h5></el-tab-pane>
+                    <el-tab-pane label="选择WTM">
+                        <p>联结：&nbsp;&nbsp;为科技女性搭建交流互动的平台，碰撞迸发更多灵感火花。</p>
+                        <p>赋能：&nbsp;&nbsp;理论与实践的全方位赋能，助力女性开发者快速提升，解锁新技能。</p>
+                        <p>成长：&nbsp;&nbsp;通过激励与创新扶持，帮助女性开发者获得更多发展空间，实现价值。</p>
+                    </el-tab-pane>
+                    <el-tab-pane label="I am excellent today">
+                        <h3> &nbsp;&nbsp;I am a female developer and I am very good. </h3>
+                        <h3> &nbsp;&nbsp;believe in myself and don't set limits on myself.</h3>
+                    </el-tab-pane>
+                </el-tabs>
+            </div>
         </div>
         <!-- /时间轴 -->
+
 
 
         <!-- 尾部 -->
@@ -97,6 +109,10 @@ export default {
       this.loadCarousels();
     },
     methods:{
+        // wtm_view专场
+        toWTM_View(){
+        this.$router.push({path:"/video"})
+        },
         // 文章详情
         // 跳转到列表页面
         toArticles(id){
@@ -123,21 +139,34 @@ export default {
 }
 </script>
 <style scoped>
-/* header */
 .header_section{
-    height: 100px;
+    position: static;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    height: 180px;
     width: 100%;
     border-radius: 0 0 70px 70px;
+    background-color: #4B0C77;;
+    margin-bottom: 25px;
+    padding-top: 120px;
 }
-/* /header */
+.header_section h1{
+    font-size: 50px;
+}
+/* /头部 */
 /*时间轴  */
+.wtm_time{
+    background-color: #ededed;
+    padding: 1.2em 0;
+}
 .timeLine{
     width:75%;
     margin: 20px auto;
     height: 200px;
 }
 /* /时间轴 */
-/* 标题 */
+/* 背景标题 */
 .wtm_back{
     width: 90%;
     margin: 10px auto;
@@ -147,21 +176,23 @@ export default {
 .wtm_back .wtm_back_img{
     width: 100%;
     height: 100%;
+    /* background: url(http://8.144.165.190/test/img/1_02.jpg) no-repeat; */
     text-align: center;
 }
 
 .wtm_back .wtm_back_img h1{
-    margin: 0px 30%;
+    cursor: pointer;
+    margin: 15px 30%;
     border-radius: 50px;
     font-weight: 500;
     padding: .5em;
     color:#fff;
-    background-color:#4B0C77;
+    background-color: #4B0C77;;
 }
 .wtm_back .wtm_back_img p:hover{
     color: #b4a078;
 }
-/* /标题 */
+/* /背景标题 */
 /* 粒子 */
 .lizi{
     position:fixed;
@@ -173,14 +204,23 @@ export default {
 /* banner */
 .wtm_banner{
     width: 100%;
+    padding: 1em 0;
 }
 /* /banner */
 
-/* body */
+/* bodyWTM工坊内容 */
+.wtm_container{
+    /* background-color: rgb(245, 205, 231); */
+    padding: 1.2em 0;
+}
 .wtm_con{
     width: 90%;
     margin: 0 auto;
-    z-index:999;
+}
+.wtm_con:after{
+    content: '';
+    display: block;
+    clear: both;
 }
 .wtm_con .wtm_con_detail{
     width: 320px;
@@ -231,6 +271,6 @@ export default {
     flex: 1;
     text-align: center;
 }
-/* /body */
+/* /bodyWTM工坊内容 */
 </style>
 
