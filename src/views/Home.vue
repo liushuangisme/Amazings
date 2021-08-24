@@ -12,9 +12,9 @@
 <!-- /头部 -->
 
 <!-- 轮播 -->
-    <div class="carousel" style="width:100%;height:500px;">
-      <el-carousel :interval="5000" arrow="always" style="width:100%;height:500px;">
-        <el-carousel-item v-for="item in carousels" :key="item.id" style="width:100%;height:500px;">
+    <div class="carousel">
+      <el-carousel :interval="5000" arrow="always">
+        <el-carousel-item v-for="item in carousels" :key="item.id">
           <img :src="item.url" alt="" style="width:100%">
         </el-carousel-item>
       </el-carousel>
@@ -39,6 +39,16 @@
         </div>
         <!-- /项目 -->
       </div>
+    </div>
+    <!-- 小于768 显示-->
+    <div class="xsprojects">
+      <div class="project" v-for="i in projects" @click="toArticles(i.id)" :key="i.id">
+          <div class="info">
+            <div class="title">{{i.title}}</div>
+            <div class="time">{{i.publishTime|fmtDate}}</div>
+            <div class="introduce">来源于：{{i.category.name}}</div>
+          </div>
+        </div>
     </div>
     <!-- /项目 -->
 
@@ -120,19 +130,47 @@ export default {
 </script>
 <style scoped>
 /* 轮播 */
-.el-carousel__container{
+@media screen and (max-width: 768px) {
+  .el-carousel .el-carousel--horizontal{
+    height:300px;
+  }
+  .el-carousel__container{
   position:relative;
-  height:1080px;
+  height:300px;
 }
 .el-carousel__item{
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
-    line-height: 1080px;
+    height:300px;
+    line-height: 300px;
     margin: 0;
   }
+}
+@media screen and (min-width:769px){
+.el-carousel__container{
+  position:relative;
+  /* height:500px; */
+}
+.el-carousel__item{
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    /* line-height: 500px; */
+    margin: 0;
+  }
+}
 /* /轮播 */
 /* 产品 */
+@media screen and (max-width:768px){
+  .projects{
+    display:none;
+  }
+}
+@media screen and (min-width:769px){
+  .xsprojects{
+    display:none;
+  }
 .projects {
   padding: .5em 0;
   cursor: pointer;
@@ -161,13 +199,15 @@ export default {
 font-size: 20px;
 padding: .7em 0;
 }
-
-/* 产品 */
-
 /* 头部 */
 .wrapper {
   width: 90%;
   margin: 0 auto;
 }
+}
+
+/* 产品 */
+
+
 
 </style>
