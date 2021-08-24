@@ -11,7 +11,7 @@
       <div class="copyright">
         本站主题采用 HTML5、CSS3、vue、element-ui等技术
         <!-- <a href="#" rel="nofollow">Vue</a> -->
-        版权归个人所有!
+        &nbsp;版权归个人所有!<br />
         <a
           href="https://mp.weixin.qq.com/s/NyHO5gjkupDaOvJR_SvaYA"
           rel="nofollow"

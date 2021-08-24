@@ -42,7 +42,14 @@
     </div>
     <!-- 小于768 显示-->
     <div class="xsprojects">
+
       <div class="project" v-for="i in projects" @click="toArticles(i.id)" :key="i.id">
+          <div class="picture">
+            <el-image
+            style="width: 5em; height: 5em"
+            :src="i.cover"
+            fit="cover"></el-image>
+          </div>
           <div class="info">
             <div class="title">{{i.title}}</div>
             <div class="time">{{i.publishTime|fmtDate}}</div>
@@ -133,10 +140,12 @@ export default {
 @media screen and (max-width: 768px) {
   .el-carousel .el-carousel--horizontal{
     height:300px;
+    overflow:hidden;
   }
   .el-carousel__container{
   position:relative;
   height:300px;
+  overflow:hidden;
 }
 .el-carousel__item{
     color: #475669;
@@ -150,13 +159,13 @@ export default {
 @media screen and (min-width:769px){
 .el-carousel__container{
   position:relative;
-  /* height:500px; */
+  height:500px!important;
 }
 .el-carousel__item{
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
-    /* line-height: 500px; */
+    line-height: 500px;
     margin: 0;
   }
 }
@@ -166,6 +175,32 @@ export default {
   .projects{
     display:none;
   }
+  .project{
+    width:90%;
+    margin:0 auto;
+    height:6em;
+    border-bottom:1px solid #ccc;
+    display:flex;
+  }
+/* .project::after{
+  content: "";
+  display: block;
+  clear: both;
+} */
+ .project > .picture{
+  flex:1;
+  padding-top:.3em;
+  /* background-color: #ededed; */
+}
+.project .info{
+  flex:3;
+  padding-top:.2em;
+  /* float: left; */
+}
+.project .info .title{
+  font-weight:600;
+  font-size:1em;
+}
 }
 @media screen and (min-width:769px){
   .xsprojects{
