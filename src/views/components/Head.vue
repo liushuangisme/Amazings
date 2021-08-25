@@ -143,7 +143,7 @@ export default {
 .xswrapper .title{
   float:left;
   font-size:16px;
-  font-weight:500;
+  font-weight:600;
   padding-left:10px;
 }
 .xswrapper .el-menu-demo{

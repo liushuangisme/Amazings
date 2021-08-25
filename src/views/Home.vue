@@ -15,7 +15,7 @@
     <div class="carousel">
       <el-carousel :interval="5000" arrow="always">
         <el-carousel-item v-for="item in carousels" :key="item.id">
-          <img :src="item.url" alt="" style="width:100%">
+          <img :src="item.url" alt="" style="width:100%" @click="toVideo">
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -97,7 +97,7 @@ export default {
       "id": 4,
       "name": "three",
       "introduce": "这是第三张",
-      "url": "http://8.144.165.190/test/img/swipe/lunbo-3.jpeg",
+      "url": "http://8.144.165.190/test/img/swipe/lunbo-3.jpg",
       "status": "正常"
     }
       ],
@@ -178,7 +178,7 @@ export default {
   .project{
     width:90%;
     margin:0 auto;
-    height:6em;
+    height:7em;
     border-bottom:1px solid #ccc;
     display:flex;
   }
@@ -189,7 +189,7 @@ export default {
 } */
  .project > .picture{
   flex:1;
-  padding-top:.3em;
+  padding-top:.9em;
   /* background-color: #ededed; */
 }
 .project .info{
@@ -198,8 +198,8 @@ export default {
   /* float: left; */
 }
 .project .info .title{
-  font-weight:600;
-  font-size:1em;
+  font-weight:400;
+  font-size:1.2rem;
 }
 }
 @media screen and (min-width:769px){
