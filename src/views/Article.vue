@@ -65,6 +65,8 @@ export default {
 .container .wrapper{
   width: 80%;
   margin: 0 auto;
+  overflow: hidden;
+  word-break: break-all;
 }
 .wrapper .title{
   font-size: 18px;

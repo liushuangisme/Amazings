@@ -110,6 +110,10 @@ export default {
     this.loadProjects();
   },
   methods:{
+    // wtm_video专场
+    toVideo(){
+      this.$router.push({path:"/video"})
+    },
     // 文章详情
     // 跳转到列表页面
     toArticles(id){
@@ -138,21 +142,24 @@ export default {
 <style scoped>
 /* 轮播 */
 @media screen and (max-width: 768px) {
+  .carousel{
+    height: 200px;
+  }
   .el-carousel .el-carousel--horizontal{
-    height:300px;
+    height:200px;
     overflow:hidden;
   }
   .el-carousel__container{
   position:relative;
-  height:300px;
+  height:200px!important;
   overflow:hidden;
 }
 .el-carousel__item{
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
-    height:300px;
-    line-height: 300px;
+    height:200px;
+    line-height: 200px;
     margin: 0;
   }
 }

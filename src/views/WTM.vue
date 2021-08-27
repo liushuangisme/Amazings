@@ -182,7 +182,7 @@ export default {
 
 .wtm_back .wtm_back_img h1{
     cursor: pointer;
-    margin: 15px 30%;
+    margin: 15px 20%;
     border-radius: 50px;
     font-weight: 500;
     padding: .5em;
