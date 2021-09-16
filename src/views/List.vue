@@ -16,7 +16,7 @@
         <h3>友情链接：</h3>
         <a href="https://v3.cn.vuejs.org/" target="_blank">Vue</a>
         <a href="http://www.axios-js.com/zh-cn/docs/index.html" target="_blank">Axios</a>
-        <a href="https://segmentfault.com/channel/toolkit" target="_blank">VueRouter</a>
+        <a href="https://router.vuejs.org/zh/guide/#html" target="_blank">VueRouter</a>
         <a href="https://element.eleme.cn/#/zh-CN" target="_blank">ElementUI</a>
         <a href="https://youzan.github.io/vant/v3/#/zh-CN/home" target="_blank">Vant</a>
         <!-- <a href="https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/" target="_blank">VueElementAdmin</a> -->
@@ -28,6 +28,7 @@
         <a href="https://es6.ruanyifeng.com/" target="_blank">ES6</a>
         <a href="https://www.runoob.com/w3cnote/bubble-sort.html" target="_blank">排序算法</a>
         <a href="https://developers.weixin.qq.com/miniprogram/dev/component/" target="_blank">小程序</a>
+        <a href="https://react.docschina.org/tutorial/tutorial.html" target="_blank">React</a>
       </div>
       <!-- /粘性导航 -->
 

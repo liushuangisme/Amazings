@@ -14,11 +14,11 @@
     </div>
     <div class="title" @click="toIndex">{{name}}</div>
     <ul class="category">
-      <li v-for="item in categories" @click="toList(item.id,item.name)" :key="item.id">{{item.name}}</li>
+      <li class="nav" v-for="item in categories" @click="toList(item.id,item.name)" :key="item.id">{{item.name}}</li>
     </ul>
-    <div class="wtm" @click="toWTM">WTM专场</div>
+    <div class="wtm nav" @click="toWTM">WTM专场</div>
     <!-- <div class="wtm" @click="toVideo">Video</div> -->
-   <div class="contact" @click="toVideo">
+   <div class="contact nav" @click="toVideo">
       <!-- <i v-html="phone"></i> -->
       <a href="#">关于</a>
     </div>
@@ -36,12 +36,12 @@
     </template>
   </el-dropdown> -->
   <el-menu class="el-menu-demo" mode="horizontal">
-  <el-submenu index="2">
-    <template slot="title"><i class="el-icon-s-fold"></i></template>
-    <el-menu-item index="2-1" v-for="item in categories" @click="toList(item.id,item.name)" :key="item.id">{{item.name}}</el-menu-item>
-    <el-menu-item index="2-2" @click="toWTM">WTM专场</el-menu-item>
-    <el-menu-item index="2-3" @click="toVideo">关于</el-menu-item>
-  </el-submenu>
+    <el-submenu index="2">
+      <template slot="title"><i class="el-icon-s-fold"></i></template>
+      <el-menu-item index="2-1" v-for="item in categories" @click="toList(item.id,item.name)" :key="item.id">{{item.name}}</el-menu-item>
+      <el-menu-item index="2-2" @click="toWTM">WTM专场</el-menu-item>
+      <el-menu-item index="2-3" @click="toVideo">关于</el-menu-item>
+    </el-submenu>
   </el-menu>
 
   </div>
@@ -206,6 +206,10 @@ export default {
   text-align: center;
   cursor: pointer;
 }
+.category .nav:hover{
+ color: #4b0c77;
+ box-shadow: 1px 1px 3px;
+}
 
 .header .contact {
   float: right;
@@ -214,6 +218,11 @@ export default {
 .wtm{
   cursor: pointer;
   padding-left: 15px;
+  padding-right: 15px;
+}
+.wtm:hover{
+  color: #4b0c77;
+  box-shadow: 1px 1px 3px;
 }
 }
 /* /wtm */
