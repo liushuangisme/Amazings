@@ -26,7 +26,7 @@
         <!-- 项目 -->
         <div class="project" v-for="i in projects" @click="toArticles(i.id)" :key="i.id">
           <div class="picture">
-            <el-image
+            <el-image class="img"
             style="width: 380px; height: 280px"
             :src="i.cover"
             fit="cover"></el-image>
@@ -240,6 +240,19 @@ export default {
 .project .info .title {
 font-size: 20px;
 padding: .7em 0;
+}
+.project .info .title:hover{
+  color:#4b0c77;
+}
+.project .picture{
+  overflow: hidden;
+}
+.project .img{
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.project  .img:hover{
+  transform: scale(1.2);
 }
 /* 头部 */
 .wrapper {
