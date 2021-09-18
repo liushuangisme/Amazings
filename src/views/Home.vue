@@ -19,6 +19,15 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+    <!-- 小屏轮播 -->
+    <div class="xs_carousel">
+      <el-carousel :interval="5000" style="height:12rem">
+        <el-carousel-item v-for="item in carousels" :key="item.id" style="height:12rem">
+          <img :src="item.url" alt="" style="width:100%;height:12rem" @click="toVideo" >
+        </el-carousel-item>
+      </el-carousel>
+    </div>
+    <!-- 小屏轮播 -->
     <!-- /轮播 -->
     <!-- 项目列表 -->
     <div class="projects">
@@ -26,7 +35,7 @@
         <!-- 项目 -->
         <div class="project" v-for="i in projects" @click="toArticles(i.id)" :key="i.id">
           <div class="picture">
-            <el-image
+            <el-image class="img"
             style="width: 380px; height: 280px"
             :src="i.cover"
             fit="cover"></el-image>
@@ -42,7 +51,7 @@
     </div>
     <!-- 小于768 显示-->
     <div class="xsprojects">
-
+      <h2 class="xsh2">文章推荐：</h2>
       <div class="project" v-for="i in projects" @click="toArticles(i.id)" :key="i.id">
           <div class="picture">
             <el-image
@@ -141,29 +150,41 @@ export default {
 </script>
 <style scoped>
 /* 轮播 */
-@media screen and (max-width: 768px) {
+  /* 小轮播 */
+@media screen and (max-width: 767px) {
   .carousel{
-    height: 200px;
+    /* height: 200px; */
+    display: none;
+  }
+  .xs_carousel{
+    /* height: 200px; */
   }
   .el-carousel .el-carousel--horizontal{
-    height:200px;
+    /* height:200px; */
     overflow:hidden;
   }
   .el-carousel__container{
   position:relative;
-  height:200px!important;
+  /* height:200px!important; */
   overflow:hidden;
 }
 .el-carousel__item{
     color: #475669;
     font-size: 18px;
     opacity: 0.75;
-    height:200px;
-    line-height: 200px;
+    /* height:200px; */
+    /* line-height: 200px; */
     margin: 0;
   }
+  .el-carousel__arrow{
+    top: 20%;
+  }
 }
-@media screen and (min-width:769px){
+/* 大轮播 */
+@media screen and (min-width:768px){
+.xs_carousel{
+    display:none;
+}
 .el-carousel__container{
   position:relative;
   height:500px!important;
@@ -178,6 +199,7 @@ export default {
 }
 /* /轮播 */
 /* 产品 */
+/* 小产品 */
 @media screen and (max-width:768px){
   .projects{
     display:none;
@@ -188,6 +210,9 @@ export default {
     height:7em;
     border-bottom:1px solid #ccc;
     display:flex;
+  }
+  .xsprojects .xsh2{
+    padding-left: .6em;
   }
 /* .project::after{
   content: "";
@@ -209,6 +234,7 @@ export default {
   font-size:1.2rem;
 }
 }
+/* 大产品展示 */
 @media screen and (min-width:769px){
   .xsprojects{
     display:none;
@@ -240,6 +266,19 @@ export default {
 .project .info .title {
 font-size: 20px;
 padding: .7em 0;
+}
+.project .info .title:hover{
+  color:#4b0c77;
+}
+.project .picture{
+  overflow: hidden;
+}
+.project .img{
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.project  .img:hover{
+  transform: scale(1.2);
 }
 /* 头部 */
 .wrapper {
