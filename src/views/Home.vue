@@ -21,9 +21,9 @@
     </div>
     <!-- 小屏轮播 -->
     <div class="xs_carousel">
-      <el-carousel :interval="5000" style="height:12rem">
-        <el-carousel-item v-for="item in carousels" :key="item.id" style="height:12rem">
-          <img :src="item.url" alt="" style="width:100%;height:12rem" @click="toVideo" >
+      <el-carousel :interval="5000" style="height:180px">
+        <el-carousel-item v-for="item in carousels" :key="item.id" style="height:180px">
+          <img :src="item.url" alt="" style="width:100%;height:180px" @click="toVideo" >
         </el-carousel-item>
       </el-carousel>
     </div>
