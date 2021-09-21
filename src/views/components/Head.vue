@@ -127,6 +127,7 @@ export default {
 }
 </script>
 <style scoped>
+/*  小屏*/
 @media screen and (max-width: 768px) {
 .wrapper{
   display:none;
@@ -145,6 +146,7 @@ export default {
   font-size:16px;
   font-weight:600;
   padding-left:10px;
+  color:#fff;
 }
 .xswrapper .el-menu-demo{
   width:70px;
@@ -155,7 +157,7 @@ export default {
     border-bottom: none;
 }
 
-
+/*大屏*/
 }
 @media screen and (min-width: 769px) {
 .xswrapper{
@@ -190,6 +192,7 @@ export default {
   width: 100%;
 }
 .header .title {
+  color:#fff;
   font-weight: bold;
   font-size: 20px;
   padding: 0 1em;
@@ -206,6 +209,9 @@ export default {
   text-align: center;
   cursor: pointer;
 }
+.category .nav{
+ color:#fff;
+}
 .category .nav:hover{
  color: #4b0c77;
  box-shadow: 1px 1px 3px;
@@ -214,11 +220,15 @@ export default {
 .header .contact {
   float: right;
 }
+.header .contact a{
+ color:#fff;
+}
 /* wtm */
 .wtm{
   cursor: pointer;
   padding-left: 15px;
   padding-right: 15px;
+  color:#fff;
 }
 .wtm:hover{
   color: #4b0c77;

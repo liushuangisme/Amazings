@@ -170,6 +170,7 @@ export default {
 }
 .el-carousel__item{
     color: #475669;
+    /*color:#fff;*/
     font-size: 18px;
     opacity: 0.75;
     /* height:200px; */
