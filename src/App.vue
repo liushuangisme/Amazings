@@ -9,7 +9,7 @@
 <template>
   <div id="app">
     <vue-particles
-        color="#dedede"
+        color="#fff"
         :particleOpacity="0.7"
         :particlesNumber="80"
         shapeType="circle"
@@ -31,6 +31,10 @@
   </div>
 </template>
 <style scoped>
+#app{
+  background-color:#000;
+  opacity:0.9;
+}
 .lizi{
   position:fixed;
   top:0;

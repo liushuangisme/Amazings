@@ -133,11 +133,15 @@ export default {
   /* margin-top: 10px; */
   padding-right: 10px;
 }
+.sticky-nav h3{
+  color:#ccc;
+}
 .sticky-nav a {
   height: 24px;
   padding: 8px 16px;
   text-decoration: none;
-  color: #212529;
+  /* color: #212529; */
+  color:#ccc;
   font-size: 16px;
 }
 .sticky-nav a::before {
