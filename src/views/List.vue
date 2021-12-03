@@ -162,15 +162,16 @@ export default {
  cursor: pointer;
 }
 .articles .title{
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
-  color: #666;
+  color: #ccc;
   padding: .6em 0;
   border-bottom: 1px solid #ededed;
 }
 .articles ul li{
   padding-top: 1em;
   display: flex;
+  color: #ccc;
 }
 .articles ul li div:first-child{
   flex: 1;

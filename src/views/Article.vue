@@ -18,7 +18,7 @@
         <span>分类：{{articleContent.category?articleContent.category.name:''}}</span>
         <span>作品整理人：{{articleContent.baseUser?articleContent.baseUser.realname:''}}</span>
       </div>
-      <div class="body" v-html="articleContent.content"></div>
+      <div class="body" v-html="articleContent.content" style="color:#ccc;"></div>
     </div>
 
     <!-- /文章 -->
@@ -73,13 +73,15 @@ export default {
   padding: 0.7em 0;
   text-align: center;
   font-weight: 500;
+  color: #ccc;
 }
 .title_detail{
   display: flex;
-
+  color: #ccc;
 }
 .title_detail span{
   flex: 1;
   text-align: center;
+  color: #ccc;
 }
 </style>
